@@ -1,0 +1,23 @@
+---
+- name: Run Docker container
+  hosts: all
+  remote_user: ubuntu
+  become: yes
+
+  tasks:
+  - name: Update packages
+    apt:
+      update_cache: yes
+  - name: Install curl
+    apt:
+      pkg:
+      - curl
+  - name: Install docker
+    shell:
+      "curl -sSL https://get.docker.com/ | sh"
+  - name: Run docker container
+    shell:
+      "sudo docker run -d --name my_site -p 80:80 dockermarina02/my_site_docker"
+  - name: Run docker container
+    shell:
+      "sudo docker run -d --name watchtower -v /var/run/docker.sock:/var/run/docker.sock containrrr/watchtower --cleanup -i 10"
