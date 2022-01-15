@@ -130,5 +130,5 @@ jobs:
  AWS provides AWS CloudWatch service that can be used as monitoring tool for checking instance status.
  <br>
  
- < <h2 align="center">Assigning DNS name</h2>
+ <h2 align="center">Assigning DNS name</h2>
  AWS provides Route53 service which lets us assing DNS name to the IP adress of the EC2 instance.
