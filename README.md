@@ -4,6 +4,7 @@
 Terraform is being used for this purpose. Terraform lets us create the infrastructure through the code.
 <br>
 Setting up ubuntu instance
+
 ```tf
  resource "aws_instance" "my_site" {
   ami           = data.aws_ami.ubuntu.id
@@ -19,14 +20,18 @@ Setting up ubuntu instance
     }
  ``` 
  <br>
+ 
  Using `provisioner "local-exec"` tu run Ansible Playbook
+ 
  ```tf
  provisioner "local-exec" {
     command = "ansible-playbook -i ${aws_instance.my_site.public_ip}, --private-key ${"aws_key.pem"} pb.yml"
   }
  ```
  <br>
+ 
  Customizing `aws_security_group` 
+ 
  ```tf
  ingress {
     description      = "HTTP"
@@ -56,6 +61,7 @@ ingress {
  
  <h2 align="center">Using Ansible Playbook</h2>
  With Ansible Playbook tasks we can run commands to setup Docker. Watchtower lets us push new image to your docker hub, thereby updating current running container.
+ 
   ```tf
  ---
 - name: Run Docker container
@@ -85,6 +91,7 @@ ingress {
  
   <h2 align="center">Using Github Actions</h2>
  With help of Github Actions we are able to build a pipeline. Following pipeline runs Lint check, logins into DockerHub and pushes the code to Docker.
+ 
  ```tf
  name: Running Docker Image
 
