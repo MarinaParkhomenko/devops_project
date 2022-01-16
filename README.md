@@ -1,5 +1,7 @@
 <h1 align="center">DevOps Project</h1>
 
+<a href="http://www.my-simple-page.pp.ua/">my-simple-page</a>
+
 <h2 align="center">Running the instance</h2>
 Terraform is being used for this purpose. Terraform lets us create the infrastructure through the code.
 <br>
