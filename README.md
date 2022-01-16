@@ -23,7 +23,7 @@ Setting up ubuntu instance
  ``` 
  <br>
  
- Using `provisioner "local-exec"` tu run Ansible Playbook
+ Using `provisioner "local-exec"` to run Ansible Playbook
  
  ```tf
  provisioner "local-exec" {
